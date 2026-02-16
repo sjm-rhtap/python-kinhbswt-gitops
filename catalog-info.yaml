@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-kinhbswt-gitops
+  description: This is GitOps manifest for python-kinhbswt   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=python-kinhbswt
+    backstage.io/kubernetes-id: python-kinhbswt 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: python-kinhbswt
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-kinhbswt
